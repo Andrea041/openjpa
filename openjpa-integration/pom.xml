@@ -34,7 +34,7 @@
     <artifactId>openjpa-integration</artifactId>
     <packaging>pom</packaging>
     <name>OpenJPA Integration Tests</name>
-
+    <!--
     <modules>
         <module>daytrader</module>
         <module>examples</module>
@@ -52,7 +52,7 @@
             </properties>
         </profile>
     </profiles>
-
+    -->
     <build>
         <pluginManagement>
             <plugins>
