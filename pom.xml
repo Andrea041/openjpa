@@ -203,10 +203,6 @@
     </modules>
 
     <profiles>
-        <!-- ================ -->
-        <!--  Build Profiles  -->
-        <!-- ================ -->
-
         <!-- Override some release settings inherited from apache-7.pom -->
         <profile>
             <id>apache-release</id>
