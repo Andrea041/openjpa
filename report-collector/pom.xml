@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>org.apache.openjpa</groupId>
-            <artifactId>openjpa-lib</artifactId>
+            <artifactId>openjpa-kernel</artifactId>
             <version>4.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>

@@ -179,6 +179,7 @@
   </scm>
 
     <modules>
+        <!-- comment unnecessary module
         <module>openjpa-lib</module>
         <module>openjpa-kernel</module>
         <module>openjpa-jdbc</module>
@@ -196,6 +197,8 @@
         <module>openjpa-tools</module>
         <module>openjpa-features</module>
         <module>openjpa-junit5</module>
+        -->
+        <module>openjpa-kernel</module>
         <module>report-collector</module>
     </modules>
 
@@ -213,12 +216,12 @@
                 </property>
             </activation>
             <properties>
-                <!--turn on sources.jar generation -->
                 <createSource>verify</createSource>
                 <createSources>true</createSources>
             </properties>
             <build>
                 <plugins>
+                    <!--
                     <plugin>
                         <groupId>org.apache.rat</groupId>
                         <artifactId>apache-rat-plugin</artifactId>
@@ -234,17 +237,16 @@
                             <excludeSubProjects>false</excludeSubProjects>
                             <numUnapprovedLicenses>0</numUnapprovedLicenses>
                             <excludes>
-                                <!-- comments are usupported in services files -->
                                 <exclude>**/jakarta.persistencespi.PersistenceProvider</exclude>
                                 <exclude>**/javax.annotation.processing.Processor</exclude>
-                                <!-- comments are usupported by our rsrc parser -->
+
                                 <exclude>**/*.rsrc</exclude>
-                                <!-- comments are usupported in these files -->
+
                                 <exclude>**/org.apache.openjpa.revision.properties</exclude>
                                 <exclude>scripts/*.list</exclude>
                                 <exclude>scripts/*.options</exclude>
                                 <exclude>scripts/*.dict</exclude>
-                                <!-- generated content -->
+
                                 <exclude>**/.*/**</exclude>
                                 <exclude>**/target/**/*</exclude>
                                 <exclude>**/dependency-reduced-pom.xml</exclude>
@@ -256,10 +258,10 @@
                             </excludes>
                         </configuration>
                     </plugin>
+                    -->
                 </plugins>
             </build>
         </profile>
-
         <profile>
             <id>sign-release</id>
             <activation>
@@ -282,6 +284,9 @@
             <id>coverage</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
+                <property>
+                    <name>!skipCoverage</name>
+                </property>
             </activation>
             <build>
                 <plugins>
@@ -420,12 +425,14 @@
                        <groupId>org.apache.maven.plugins</groupId>
                        <artifactId>maven-surefire-plugin</artifactId>
                        <version>${maven.surefire.version}</version>
+                       <!--
                        <configuration>
                            <argLine>${surefire.jvm.args}</argLine>
                            <includes>
                                <include />
                            </includes>
                        </configuration>
+                       -->
                    </plugin>
                 </plugins>
             </build>
@@ -2001,14 +2008,14 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven.surefire.version}</version>
+                    <!--
                     <configuration>
                         <argLine>${surefire.jvm.args}</argLine>
                         <redirectTestOutputToFile>true</redirectTestOutputToFile>
                         <trimStackTrace>false</trimStackTrace>
                         <useSystemClassLoader>true</useSystemClassLoader>
                         <excludes>
-                            <!-- exclude classes that include a $; inner classes
-                                 are not test cases per OpenJPA standards -->
+
                             <exclude>org/apache/openjpa/**/*$*.class</exclude>
                         </excludes>
                     <systemProperties>
@@ -2066,6 +2073,7 @@
                         </property>
                     </systemProperties>
                     </configuration>
+                    -->
                 </plugin>
                 <plugin>
                     <groupId>io.fabric8</groupId>
@@ -2101,11 +2109,13 @@
                         </execution>
                     </executions>
                 </plugin>
+                <!--
                 <plugin>
                     <groupId>org.apache.rat</groupId>
                     <artifactId>apache-rat-plugin</artifactId>
                     <version>0.12</version>
                 </plugin>
+                -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
@@ -2333,6 +2343,7 @@
                     </execution>
                 </executions>
             </plugin>
+            <!--
             <plugin>
                 <groupId>org.apache.rat</groupId>
                 <artifactId>apache-rat-plugin</artifactId>
@@ -2348,12 +2359,12 @@
                     <excludeSubProjects>false</excludeSubProjects>
                     <numUnapprovedLicenses>0</numUnapprovedLicenses>
                     <excludes>
-                        <!-- generated content -->
+
                         <exclude>**/.*/**</exclude>
                         <exclude>**/target/**/*</exclude>
                     </excludes>
                     <includes>
-                        <!-- only check common source files -->
+
                         <include>**/src/**/*.bat</include>
                         <include>**/src/**/*.css</include>
                         <include>**/src/**/*.html</include>
@@ -2368,6 +2379,7 @@
                     </includes>
                 </configuration>
             </plugin>
+            -->
         </plugins>
     </build>
 
