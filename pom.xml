@@ -48,6 +48,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <checkstyle.suppressions.location>openjpa-project${file.separator}suppressions.xml</checkstyle.suppressions.location>
 
+        <!-- Sonar ISW2 -->
+        <sonar.organization>andrea041</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+
+        <!-- JaCoCo ISW2 -->
+        <sonar.coverage.jacoco.xmlReportPaths>../test-jacoco/target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+
         <site.deploy.url>scp://people.apache.org/home/${site.deploy.user.name}/public_html/openjpa/${project.version}/staging-site</site.deploy.url>
         <!-- the test settings can be overridden my specific profiles -->
         <test.jvm.maxheapsize>1024m</test.jvm.maxheapsize>
@@ -179,7 +186,6 @@
   </scm>
 
     <modules>
-        <!-- comment unnecessary module
         <module>openjpa-lib</module>
         <module>openjpa-kernel</module>
         <module>openjpa-jdbc</module>
@@ -197,8 +203,6 @@
         <module>openjpa-tools</module>
         <module>openjpa-features</module>
         <module>openjpa-junit5</module>
-        -->
-        <module>openjpa-kernel</module>
         <module>report-collector</module>
     </modules>
 
