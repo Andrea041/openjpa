@@ -1920,11 +1920,13 @@
                 <artifactId>slf4j-simple</artifactId>
                 <version>${slf4j.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>org.apache.ant</groupId>
                 <artifactId>ant</artifactId>
                 <version>${ant.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>org.jmock</groupId>
                 <artifactId>jmock</artifactId>
@@ -2146,6 +2148,7 @@
                         <localCheckout>true</localCheckout>
                     </configuration>
                 </plugin>
+                <!--
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-antrun-plugin</artifactId>
@@ -2160,7 +2163,6 @@
                             <groupId>ant-contrib</groupId>
                             <artifactId>ant-contrib</artifactId>
                             <version>1.0b3</version>
-                            <!-- tries to pull in older ant-1.5.jar -->
                             <exclusions>
                                 <exclusion>
                                     <groupId>ant</groupId>
@@ -2170,6 +2172,7 @@
                         </dependency>
                     </dependencies>
                 </plugin>
+                -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>taglist-maven-plugin</artifactId>
