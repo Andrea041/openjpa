@@ -44,7 +44,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Andrea041_openjpa -P coverage
       - name: Save JaCoCo report
-        if: success() && steps.build.outputs.jacoco-report-found == 'true'
         uses: actions/upload-artifact@v3
         with:
           name: JaCoCoReport
