@@ -210,6 +210,7 @@
         </profile>
 
         <!-- Profile to launch OpenBooks via "mvn test -Prun" -->
+        <!--
         <profile>
             <id>run</id>
             <build>
@@ -240,7 +241,7 @@
                 </plugins>
             </build>
         </profile>
-
+        -->
     </profiles>
 </project>
 
