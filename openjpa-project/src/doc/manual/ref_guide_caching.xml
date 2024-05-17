@@ -500,9 +500,9 @@ number of read or write requests and hit ratio of the cache.
             Accessing the Cache
         </title>
         <programlisting>
-import jakarta.persistence.Cache;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
+import javax.persistence.Cache;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 . . .
 EntityManagerFactory emf =
     Persistence.createEntityManagerFactory("myPersistenceUnit");

@@ -106,6 +106,10 @@ import org.apache.xbean.asm9.Opcodes;
 import org.apache.xbean.asm9.Type;
 import org.apache.xbean.asm9.tree.*;
 
+import serp.bytecode.BCClass;
+import serp.bytecode.BCField;
+import serp.bytecode.Instruction;
+
 
 /**
  * Bytecode enhancer used to enhance persistent classes from metadata. The
@@ -170,15 +174,17 @@ public class PCEnhancer {
         int rev = 0;
         Properties revisionProps = new Properties();
         try {
-            InputStream in = PCEnhancer.class.getResourceAsStream("/META-INF/org.apache.openjpa.revision.properties");
-            if (in != null) {
-                try (in) {
+            try (InputStream in = PCEnhancer.class.getResourceAsStream("/META-INF/org.apache.openjpa.revision.properties")) {
+                if (in != null) {
                     revisionProps.load(in);
                 }
+            } catch (Exception e) {
+                // ignore
             }
             rev = GitUtils.convertGitInfoToPCEnhancerVersion(revisionProps.getProperty("openjpa.enhancer.revision"));
         }
         catch (Exception e) {
+            // ignore
         }
         if (rev > 0) {
             ENHANCER_VERSION = rev;
@@ -211,6 +217,7 @@ public class PCEnhancer {
      */
     private ClassNodeTracker pc;
 
+    private BCClass _pc;
     private boolean _defCons = true;
     private boolean _redefine = false;
     private boolean _subclass = false;
@@ -3504,11 +3511,10 @@ public class PCEnhancer {
         // is detachable and uses detached state without a declared field,
         // can't add a serial version UID because we'll be adding extra fields
         // to the enhanced version
-        final Optional<FieldNode> serialVersionUIDNode = pc.getClassNode().fields.stream()
-                .filter(f -> f.name.equals("serialVersionUID"))
-                .findFirst();
 
-        if (serialVersionUIDNode.isEmpty()) {
+        BCField field = _pc.getDeclaredField("serialVersionUID");
+
+        if (field == null) {
             Long uid = null;
             try {
                 uid = ObjectStreamClass.lookup(_meta.getDescribedType()).getSerialVersionUID();

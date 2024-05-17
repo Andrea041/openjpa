@@ -20,6 +20,7 @@ package org.apache.openjpa.util.proxy;
 
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.function.IntFunction;
 
 import org.apache.openjpa.util.Proxy;
 
@@ -41,4 +42,6 @@ public interface ProxyCollection
      */
     ProxyCollection newInstance(Class elementType, Comparator comp,
         boolean trackChanges, boolean autoOff);
+
+    Object[] toArray(IntFunction generator);
 }

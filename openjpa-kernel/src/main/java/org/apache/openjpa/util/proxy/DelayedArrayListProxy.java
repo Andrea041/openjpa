@@ -417,7 +417,7 @@ public class DelayedArrayListProxy extends ArrayList implements ProxyCollection,
         if (!_directAccess && isDelayLoad()) {
             load();
         }
-        return super.toArray(generator);
+        return super.toArray();
     }
 
     @Override

@@ -20,7 +20,7 @@ package org.apache.openjpa.persistence;
 
 import java.util.Locale;
 
-import jakarta.persistence.LockModeType;
+import javax.persistence.LockModeType;
 
 import org.apache.openjpa.kernel.FetchConfiguration;
 import org.apache.openjpa.kernel.LockLevels;

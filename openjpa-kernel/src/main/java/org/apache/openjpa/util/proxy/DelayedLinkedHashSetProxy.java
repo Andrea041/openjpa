@@ -286,7 +286,7 @@ public class DelayedLinkedHashSetProxy extends LinkedHashSet implements DelayedP
         if (!_directAccess && isDelayLoad()) {
             load();
         }
-        return super.toArray(generator);
+        return super.toArray();
     }
 
     @Override

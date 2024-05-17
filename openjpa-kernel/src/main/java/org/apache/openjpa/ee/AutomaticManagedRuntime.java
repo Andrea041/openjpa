@@ -21,9 +21,9 @@ package org.apache.openjpa.ee;
 import java.util.LinkedList;
 import java.util.List;
 
-import jakarta.transaction.NotSupportedException;
-import jakarta.transaction.SystemException;
-import jakarta.transaction.TransactionManager;
+import javax.transaction.NotSupportedException;
+import javax.transaction.SystemException;
+import javax.transaction.TransactionManager;
 
 import org.apache.openjpa.lib.conf.Configurable;
 import org.apache.openjpa.lib.conf.Configuration;

@@ -287,7 +287,7 @@ public class DelayedHashSetProxy extends HashSet implements DelayedProxy, ProxyC
         if (!_directAccess && isDelayLoad()) {
             load();
         }
-        return super.toArray(generator);
+        return super.toArray();
     }
 
     @Override

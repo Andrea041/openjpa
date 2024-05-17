@@ -18,7 +18,7 @@ package org.apache.openjpa.persistence.osgi;
 
 import java.util.Hashtable;
 
-import jakarta.persistence.spi.PersistenceProvider;
+import javax.persistence.spi.PersistenceProvider;
 
 import org.apache.openjpa.ee.OSGiManagedRuntime;
 import org.apache.openjpa.persistence.PersistenceProviderImpl;

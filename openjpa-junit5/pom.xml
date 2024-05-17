@@ -33,11 +33,13 @@
     <description>OpenJPA JUnit 5</description>
 
     <dependencies>
+        <!--
         <dependency>
             <groupId>jakarta.persistence</groupId>
             <artifactId>jakarta.persistence-api</artifactId>
             <scope>provided</scope>
         </dependency>
+        -->
         <dependency>
             <groupId>org.apache.openjpa</groupId>
             <artifactId>openjpa</artifactId>

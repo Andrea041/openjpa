@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence;
 
-import jakarta.persistence.PessimisticLockScope;
+import javax.persistence.PessimisticLockScope;
 
 import org.apache.openjpa.kernel.LockScopes;
 

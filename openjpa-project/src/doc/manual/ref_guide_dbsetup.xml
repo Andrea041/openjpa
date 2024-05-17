@@ -623,8 +623,8 @@ connection is not released if a datastore transaction is in progress.
             </title>
 <programlisting>
 import java.sql.Connection;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 
 ...
 

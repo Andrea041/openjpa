@@ -536,7 +536,7 @@ public class DelayedVectorProxy extends Vector implements ProxyCollection, Delay
         if (!_directAccess && isDelayLoad()) {
             load();
         }
-        return super.toArray(generator);
+        return super.toArray();
     }
 
     @Override

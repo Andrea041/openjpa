@@ -36,12 +36,18 @@
     <description>OpenJPA Utilities Library</description>
 
     <dependencies>
+        <!--
         <dependency>
             <groupId>jakarta-regexp</groupId>
             <artifactId>jakarta-regexp</artifactId>
             <scope>test</scope>
         </dependency>
-
+        -->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.1.0.Final</version>
+        </dependency>
         <!-- for our switchable logging provider integration -->
         <dependency>
             <groupId>commons-logging</groupId>
@@ -74,11 +80,13 @@
             <artifactId>xbean-asm9-shaded</artifactId>
             <version>${xbean.version}</version>
         </dependency>
+        <!--
         <dependency>
             <groupId>jakarta.validation</groupId>
             <artifactId>jakarta.validation-api</artifactId>
             <scope>provided</scope>
         </dependency>
+        -->
     </dependencies>
 
     <build>

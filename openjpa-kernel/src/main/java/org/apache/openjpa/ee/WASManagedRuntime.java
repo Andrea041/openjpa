@@ -22,15 +22,15 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 
 import com.ibm.websphere.jtaextensions.ExtendedJTATransaction;
-import jakarta.transaction.HeuristicMixedException;
-import jakarta.transaction.HeuristicRollbackException;
-import jakarta.transaction.InvalidTransactionException;
-import jakarta.transaction.NotSupportedException;
-import jakarta.transaction.RollbackException;
-import jakarta.transaction.Status;
-import jakarta.transaction.Synchronization;
-import jakarta.transaction.SystemException;
-import jakarta.transaction.Transaction;
+import javax.transaction.HeuristicMixedException;
+import javax.transaction.HeuristicRollbackException;
+import javax.transaction.InvalidTransactionException;
+import javax.transaction.NotSupportedException;
+import javax.transaction.RollbackException;
+import javax.transaction.Status;
+import javax.transaction.Synchronization;
+import javax.transaction.SystemException;
+import javax.transaction.Transaction;
 import javax.transaction.xa.XAResource;
 
 import org.apache.openjpa.conf.OpenJPAConfiguration;
@@ -72,7 +72,7 @@ public class WASManagedRuntime extends AbstractManagedRuntime
      * wrapper
      */
     @Override
-    public jakarta.transaction.TransactionManager getTransactionManager()
+    public javax.transaction.TransactionManager getTransactionManager()
         throws Exception {
         return new WASTransaction();
     }
@@ -90,8 +90,8 @@ public class WASManagedRuntime extends AbstractManagedRuntime
      * <LI>GetStatus</LI>
      * </UL>
      */
-    class WASTransaction implements jakarta.transaction.TransactionManager,
-        jakarta.transaction.Transaction {
+    class WASTransaction implements javax.transaction.TransactionManager,
+        javax.transaction.Transaction {
 
         @Override
         public int getStatus() throws SystemException {

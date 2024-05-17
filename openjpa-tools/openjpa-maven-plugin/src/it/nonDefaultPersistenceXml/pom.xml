@@ -34,6 +34,7 @@
     <artifactId>nonDefaultPersistenceXml</artifactId>
     <version>1.0-SNAPSHOT</version>
     <dependencies>
+        <!--
         <dependency>
             <groupId>jakarta.persistence</groupId>
             <artifactId>jakarta.persistence-api</artifactId>
@@ -41,6 +42,12 @@
         <dependency>
             <groupId>jakarta.validation</groupId>
             <artifactId>jakarta.validation-api</artifactId>
+        </dependency>
+        -->
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>javax.persistence-api</artifactId>
+            <version>2.2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.openjpa</groupId>

@@ -22,8 +22,8 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-import jakarta.persistence.CacheRetrieveMode;
-import jakarta.persistence.CacheStoreMode;
+import javax.persistence.CacheRetrieveMode;
+import javax.persistence.CacheStoreMode;
 
 import org.apache.openjpa.kernel.DataCacheRetrieveMode;
 import org.apache.openjpa.kernel.DataCacheStoreMode;

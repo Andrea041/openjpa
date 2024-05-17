@@ -326,7 +326,7 @@ public class DelayedTreeSetProxy extends TreeSet implements ProxyCollection, Del
         if (!_directAccess && isDelayLoad()) {
             load();
         }
-        return super.toArray(generator);
+        return super.toArray();
     }
 
     @Override

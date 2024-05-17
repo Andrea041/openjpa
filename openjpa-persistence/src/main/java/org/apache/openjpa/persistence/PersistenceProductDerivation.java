@@ -37,10 +37,10 @@ import java.util.Map;
 import java.util.MissingResourceException;
 import java.util.Set;
 
-import jakarta.persistence.SharedCacheMode;
-import jakarta.persistence.ValidationMode;
-import jakarta.persistence.spi.PersistenceUnitInfo;
-import jakarta.persistence.spi.PersistenceUnitTransactionType;
+import javax.persistence.SharedCacheMode;
+import javax.persistence.ValidationMode;
+import javax.persistence.spi.PersistenceUnitInfo;
+import javax.persistence.spi.PersistenceUnitTransactionType;
 
 import org.apache.openjpa.conf.Compatibility;
 import org.apache.openjpa.conf.OpenJPAConfiguration;
@@ -180,7 +180,7 @@ public class PersistenceProductDerivation
         throws Exception {
         // make sure JPA is available
         AccessController.doPrivileged(J2DoPrivHelper.getClassLoaderAction(
-            jakarta.persistence.EntityManagerFactory.class));
+            javax.persistence.EntityManagerFactory.class));
     }
 
     @Override

@@ -26,20 +26,20 @@
     <parent>
       <groupId>org.apache</groupId>
       <artifactId>apache</artifactId>
-      <version>29</version>
+      <version>23</version>
     </parent>
 
     <groupId>org.apache.openjpa</groupId>
     <artifactId>openjpa-parent</artifactId>
     <packaging>pom</packaging>
     <name>OpenJPA Parent POM</name>
-    <description>Apache OpenJPA implementation of Jakarta JPA 3.1</description>
+    <description>Apache OpenJPA implementation of JSR-338 JPA 2.2</description>
 
     <version>4.0.1-SNAPSHOT</version>
 
     <properties>
-        <java.class.version>11</java.class.version>
-        <java.testclass.version>11</java.testclass.version>
+        <java.class.version>1.8</java.class.version>
+        <java.testclass.version>1.8</java.testclass.version>
 
         <doclint>none</doclint>
 
@@ -51,9 +51,14 @@
         <!-- Sonar ISW2 -->
         <sonar.organization>andrea041</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.scanner.force-deprecated-java-version>true</sonar.scanner.force-deprecated-java-version>
 
         <!-- JaCoCo ISW2 -->
         <sonar.coverage.jacoco.xmlReportPaths>../test-jacoco/target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+
+        <!-- Mockito -->
+        <mockito.version>3.12.4</mockito.version>
+        <powermock.version>2.0.9</powermock.version>
 
         <site.deploy.url>scp://people.apache.org/home/${site.deploy.user.name}/public_html/openjpa/${project.version}/staging-site</site.deploy.url>
         <!-- the test settings can be overridden my specific profiles -->
@@ -112,11 +117,13 @@
         <dbcp2.version>2.8.0</dbcp2.version>
         <pool2.version>2.9.0</pool2.version>
 
+        <!--
         <jakarta.annotation-api.version>2.1.1</jakarta.annotation-api.version>
         <jakarta.persistence-api.version>3.0.0</jakarta.persistence-api.version>
         <jakarta.transaction-api.version>2.0.1</jakarta.transaction-api.version>
         <jakarta.validation-api.version>3.0.2</jakarta.validation-api.version>
         <jakarta.jms-api.version>3.1.0</jakarta.jms-api.version>
+        -->
 
     </properties>
 
@@ -283,12 +290,14 @@
         </profile>
 
         <profile>
-            <id>coverage</id>
+            <id>JaCoCo</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
+                <!--
                 <property>
                     <name>!skipCoverage</name>
                 </property>
+                -->
             </activation>
             <build>
                 <plugins>
@@ -1799,6 +1808,21 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>javax.transaction</groupId>
+                <artifactId>javax.transaction-api</artifactId>
+                <version>1.3</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-inline</artifactId>
+                <version>${mockito.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-pool2</artifactId>
                 <version>${pool2.version}</version>
@@ -1808,6 +1832,7 @@
                 <artifactId>commons-logging</artifactId>
                 <version>1.2</version>
             </dependency>
+            <!--
             <dependency>
                 <groupId>jakarta.persistence</groupId>
                 <artifactId>jakarta.persistence-api</artifactId>
@@ -1833,7 +1858,7 @@
                 <artifactId>jakarta.jms-api</artifactId>
                 <version>${jakarta.jms-api.version}</version>
             </dependency>
-
+            -->
             <dependency>
                 <groupId>org.apache.bval</groupId>
                 <artifactId>org.apache.bval.bundle</artifactId>
@@ -1885,11 +1910,13 @@
                 <version>${postgresql.connector.version}</version>
                 <scope>provided</scope>
             </dependency>
+            <!--
             <dependency>
                 <groupId>jakarta-regexp</groupId>
                 <artifactId>jakarta-regexp</artifactId>
                 <version>1.4</version>
             </dependency>
+            -->
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-core</artifactId>

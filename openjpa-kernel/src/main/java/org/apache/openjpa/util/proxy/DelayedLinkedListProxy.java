@@ -579,7 +579,7 @@ public class DelayedLinkedListProxy extends LinkedList implements ProxyCollectio
         if (!_directAccess && isDelayLoad()) {
             load();
         }
-        return super.toArray(generator);
+        return super.toArray();
     }
 
     @Override

@@ -18,10 +18,10 @@ package org.apache.openjpa.persistence.validation;
 
 import java.lang.annotation.ElementType;
 
-import jakarta.persistence.spi.LoadState;
-import jakarta.validation.Path;
-import jakarta.validation.Path.Node;
-import jakarta.validation.TraversableResolver;
+import javax.persistence.spi.LoadState;
+import javax.validation.Path;
+import javax.validation.Path.Node;
+import javax.validation.TraversableResolver;
 
 import org.apache.openjpa.persistence.OpenJPAPersistenceUtil;
 
@@ -40,7 +40,7 @@ public class TraversableResolverImpl implements TraversableResolver {
      * a property for validation or for cascading.
      *
      * @see jakarta.validation.TraversableResolver#isReachable(java.lang.Object,
-     *      jakarta.validation.Path.Node, java.lang.Class, jakarta.validation.Path,
+     *      jakarta.validation.Path.Node, java.lang.Class, javax.validation.Path,
      *      java.lang.annotation.ElementType)
      */
     @Override
@@ -65,7 +65,7 @@ public class TraversableResolverImpl implements TraversableResolver {
      * is cascaded.
      *
      * @see jakarta.validation.TraversableResolver#isCascadable(java.lang.Object,
-     *      jakarta.validation.Path.Node, java.lang.Class, jakarta.validation.Path,
+     *      jakarta.validation.Path.Node, java.lang.Class, javax.validation.Path,
      *      java.lang.annotation.ElementType)
      */
     @Override

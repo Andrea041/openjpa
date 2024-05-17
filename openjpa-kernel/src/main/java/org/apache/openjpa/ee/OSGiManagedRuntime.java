@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.ee;
 
-import jakarta.transaction.TransactionManager;
+import javax.transaction.TransactionManager;
 
 import org.apache.openjpa.util.InternalException;
 import org.osgi.framework.BundleActivator;

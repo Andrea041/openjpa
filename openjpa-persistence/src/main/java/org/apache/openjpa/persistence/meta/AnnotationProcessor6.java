@@ -41,7 +41,7 @@ import javax.lang.model.element.TypeElement;
 import javax.lang.model.type.TypeKind;
 import javax.lang.model.type.TypeMirror;
 import javax.lang.model.util.Elements;
-import jakarta.persistence.metamodel.StaticMetamodel;
+import javax.persistence.metamodel.StaticMetamodel;
 import javax.tools.Diagnostic;
 import javax.tools.JavaFileObject;
 
@@ -322,7 +322,7 @@ public class AnnotationProcessor6 extends AbstractProcessor {
                 return;
 
             case "force":
-                cls.addAnnotation(jakarta.annotation.Generated.class.getName())
+                cls.addAnnotation(javax.annotation.Generated.class.getName())
                         .addArgument("value", this.getClass().getName())
                         .addArgument("date", this.generationDate.toString());
                 break;

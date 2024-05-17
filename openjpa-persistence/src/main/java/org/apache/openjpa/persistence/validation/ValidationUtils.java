@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.validation;
 
-import jakarta.persistence.ValidationMode;
+import javax.persistence.ValidationMode;
 
 import org.apache.openjpa.conf.OpenJPAConfiguration;
 import org.apache.openjpa.lib.log.Log;

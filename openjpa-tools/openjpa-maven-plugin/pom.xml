@@ -117,7 +117,7 @@
             <artifactId>openjpa-persistence-jdbc</artifactId>
             <version>${project.version}</version>
         </dependency>
-
+        <!--
         <dependency>
             <groupId>jakarta.persistence</groupId>
             <artifactId>jakarta.persistence-api</artifactId>
@@ -127,6 +127,7 @@
             <groupId>jakarta.validation</groupId>
             <artifactId>jakarta.validation-api</artifactId>
         </dependency>
+        -->
         <dependency>
             <groupId>org.apache.bval</groupId>
             <artifactId>org.apache.bval.bundle</artifactId>

@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.meta;
 
-import static jakarta.persistence.AccessType.FIELD;
-import static jakarta.persistence.AccessType.PROPERTY;
+import static javax.persistence.AccessType.FIELD;
+import static javax.persistence.AccessType.PROPERTY;
 
 import java.lang.annotation.Annotation;
 import java.util.ArrayList;
@@ -45,16 +45,16 @@ import javax.lang.model.type.PrimitiveType;
 import javax.lang.model.type.TypeKind;
 import javax.lang.model.type.TypeMirror;
 import javax.lang.model.util.Types;
-import jakarta.persistence.Access;
-import jakarta.persistence.AccessType;
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.MappedSuperclass;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Transient;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
 import org.apache.openjpa.lib.util.Localizer;
 import org.apache.openjpa.meta.AccessCode;

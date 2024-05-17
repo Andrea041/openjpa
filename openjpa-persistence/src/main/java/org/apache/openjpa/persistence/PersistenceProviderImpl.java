@@ -40,12 +40,12 @@ import org.apache.openjpa.persistence.osgi.BundleUtils;
 import org.apache.openjpa.persistence.validation.ValidationUtils;
 import org.apache.openjpa.util.ClassResolver;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.spi.ClassTransformer;
-import jakarta.persistence.spi.LoadState;
-import jakarta.persistence.spi.PersistenceProvider;
-import jakarta.persistence.spi.PersistenceUnitInfo;
-import jakarta.persistence.spi.ProviderUtil;
+import javax.persistence.EntityManager;
+import javax.persistence.spi.ClassTransformer;
+import javax.persistence.spi.LoadState;
+import javax.persistence.spi.PersistenceProvider;
+import javax.persistence.spi.PersistenceUnitInfo;
+import javax.persistence.spi.ProviderUtil;
 
 import java.lang.instrument.ClassFileTransformer;
 import java.lang.instrument.IllegalClassFormatException;

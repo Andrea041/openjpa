@@ -341,7 +341,7 @@ public class DelayedPriorityQueueProxy extends PriorityQueue implements ProxyCol
         if (!_directAccess && isDelayLoad()) {
             load();
         }
-        return super.toArray(generator);
+        return super.toArray();
     }
 
     @Override

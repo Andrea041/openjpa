@@ -25,8 +25,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import jakarta.persistence.LockModeType;
-import jakarta.persistence.PessimisticLockScope;
+import javax.persistence.LockModeType;
+import javax.persistence.PessimisticLockScope;
 
 import org.apache.openjpa.kernel.DataCacheRetrieveMode;
 import org.apache.openjpa.kernel.DataCacheStoreMode;

@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence;
 
-import jakarta.persistence.EntityTransaction;
+import javax.persistence.EntityTransaction;
 
 /**
  * Extension of the JPA {@link EntityTransaction} interface.
