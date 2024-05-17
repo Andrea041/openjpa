@@ -40,5 +40,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: BaDuaReport
-          path: bookkeeper-server/target/badua.xml
+          path: openjpa-kernel/target/badua.xml
           if-no-files-found: error
