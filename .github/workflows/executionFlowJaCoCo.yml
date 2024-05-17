@@ -1,4 +1,4 @@
-name: ISW2 OpenJPA Testing
+name: ISW2 Testing OpenJPA JaCoCo
 
 on:
   push:
