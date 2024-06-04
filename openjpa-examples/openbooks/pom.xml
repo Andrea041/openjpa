@@ -29,7 +29,7 @@
     <parent>
         <groupId>org.apache.openjpa</groupId>
         <artifactId>openjpa-examples</artifactId>
-        <version>3.2.3-SNAPSHOT</version>
+        <version>4.0.1-SNAPSHOT</version>
     </parent>
 
     <groupId>org.apache.openjpa.openjpa-examples</groupId>
@@ -122,6 +122,7 @@
                     </resource>
                 </resources>
                 <plugins>
+                    <!--
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-antrun-plugin</artifactId>
@@ -167,6 +168,7 @@
                             </execution>
                         </executions>
                     </plugin>
+                    -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-assembly-plugin</artifactId>
@@ -191,6 +193,7 @@
         </profile>
 
         <!-- Profile to launch OpenBooks via "mvn test -Prun" -->
+        <!--
         <profile>
             <id>run</id>
             <build>
@@ -221,7 +224,7 @@
                 </plugins>
             </build>
         </profile>
-
+        -->
     </profiles>
 </project>
 

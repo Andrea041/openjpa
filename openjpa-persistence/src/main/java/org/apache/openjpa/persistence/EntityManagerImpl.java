@@ -2059,7 +2059,7 @@ public class EntityManagerImpl
             for (Map.Entry<String, Object> entry : properties.entrySet()) {
                 String key = entry.getKey();
                 Object value = entry.getValue();
-                if (key.equals("javax.persistence.lock.scope")) {
+                if (key.equals("jakarta.persistence.lock.scope")) {
                     fetch.setLockScope((PessimisticLockScope)value);
                 } else
                     fetch.setHint(key, value);

@@ -27,7 +27,6 @@ import javax.naming.NamingException;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
-import javax.rmi.PortableRemoteObject;
 
 import org.apache.openjpa.enhance.PersistenceCapable;
 import org.apache.openjpa.kernel.Bootstrap;
@@ -146,8 +145,7 @@ public class OpenJPAPersistence {
                 context = new InitialContext();
 
             Object o = context.lookup(jndiLocation);
-            return (OpenJPAEntityManagerFactory) PortableRemoteObject.narrow(o,
-                OpenJPAEntityManagerFactory.class);
+            return (OpenJPAEntityManagerFactory) o;
         } catch (NamingException ne) {
             throw new ArgumentException(_loc.get("naming-exception",
                 jndiLocation), new Throwable[]{ ne }, null, true);

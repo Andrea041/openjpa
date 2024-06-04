@@ -30,7 +30,6 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
-import javax.annotation.Generated;
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.ProcessingEnvironment;
 import javax.annotation.processing.RoundEnvironment;
@@ -92,9 +91,9 @@ import org.apache.openjpa.persistence.util.SourceCode;
  *
  */
 @SupportedAnnotationTypes({
-    "javax.persistence.Entity",
-    "javax.persistence.Embeddable",
-    "javax.persistence.MappedSuperclass" })
+    "jakarta.persistence.Entity",
+    "jakarta.persistence.Embeddable",
+    "jakarta.persistence.MappedSuperclass" })
 @SupportedOptions({ "openjpa.log",
                     "openjpa.source",
                     "openjpa.naming",
@@ -121,11 +120,11 @@ public class AnnotationProcessor6 extends AbstractProcessor {
      *
      */
     private static enum TypeCategory {
-        ATTRIBUTE("javax.persistence.metamodel.SingularAttribute"),
-        COLLECTION("javax.persistence.metamodel.CollectionAttribute"),
-        SET("javax.persistence.metamodel.SetAttribute"),
-        LIST("javax.persistence.metamodel.ListAttribute"),
-        MAP("javax.persistence.metamodel.MapAttribute");
+        ATTRIBUTE("jakarta.persistence.metamodel.SingularAttribute"),
+        COLLECTION("jakarta.persistence.metamodel.CollectionAttribute"),
+        SET("jakarta.persistence.metamodel.SetAttribute"),
+        LIST("jakarta.persistence.metamodel.ListAttribute"),
+        MAP("jakarta.persistence.metamodel.MapAttribute");
 
         private String type;
 
@@ -411,7 +410,7 @@ public class AnnotationProcessor6 extends AbstractProcessor {
 
         // only add the annotation if it is on the classpath for Java 6+.
         try {
-            this.generatedAnnotation = Class.forName("javax.annotation.Generated", false, null);
+            this.generatedAnnotation = Class.forName("jakarta.annotation.Generated", false, null);
         } catch (ClassNotFoundException generatedNotFoundEx) {
             logger.trace(_loc.get("mmg-annotation-not-found"));
         }
