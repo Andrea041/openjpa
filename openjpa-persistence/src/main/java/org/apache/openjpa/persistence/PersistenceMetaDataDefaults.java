@@ -907,7 +907,7 @@ public class PersistenceMetaDataDefaults
     }
 
     /**
-     * Selects all element annotated with <code>javax.persistence.*</code> or
+     * Selects all element annotated with <code>jakarta.persistence.*</code> or
      * <code>org.apache.openjpa.*</code> annotation except the annotations
      * marked to be ignored.
      */
@@ -918,7 +918,7 @@ public class PersistenceMetaDataDefaults
                     .getAnnotationsAction(obj));
         	for (Annotation anno : annos) {
         		String name = anno.annotationType().getName();
-                if ((name.startsWith("javax.persistence.")
+                if ((name.startsWith("jakarta.persistence.")
                   || name.startsWith("org.apache.openjpa.persistence."))
                   && !_ignoredAnnos.contains(name))
                 	return true;

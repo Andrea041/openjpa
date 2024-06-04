@@ -36,7 +36,7 @@ public interface OpenJPACriteriaBuilder extends CriteriaBuilder {
     /**
      * The mnemonic to identify the query language.
      */
-    String LANG_CRITERIA = "javax.persistence.criteria";
+    String LANG_CRITERIA = "jakarta.persistence.criteria";
 
     /**
      * Create a predicate based upon the attribute values of a given

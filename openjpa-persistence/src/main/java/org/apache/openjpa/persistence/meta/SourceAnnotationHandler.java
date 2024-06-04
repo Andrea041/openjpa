@@ -489,7 +489,7 @@ public class SourceAnnotationHandler
 
     /**
      * Affirms if the given element is annotated with <em>any</em>
-     * <code>javax.persistence.*</code> or <code>org.apache.openjpa.*</code>
+     * <code>jakarta.persistence.*</code> or <code>org.apache.openjpa.*</code>
      * annotation.
      */
     public static boolean isAnnotated(Element e) {
@@ -518,7 +518,7 @@ public class SourceAnnotationHandler
      * annotations.
      *
      * @param annos null checks for any annotation that starts with
-     *            'javax.persistence.' or 'openjpa.*'.
+     *            'jakarta.persistence.' or 'openjpa.*'.
      *
      */
     public static boolean isAnnotatedWith(Element e, Set<String> annos) {
@@ -528,7 +528,7 @@ public class SourceAnnotationHandler
         if (annos == null) {
             for (AnnotationMirror mirror : mirrors) {
                 String name = mirror.getAnnotationType().toString();
-                if (startsWith(name, "javax.persistence.")
+                if (startsWith(name, "jakarta.persistence.")
                  || startsWith(name, "org.apache.openjpa."))
                     return true;
             }

@@ -18,6 +18,9 @@
  */
 package org.apache.openjpa.util;
 
+import java.io.PrintStream;
+import java.io.PrintWriter;
+
 /**
  * Interface supplying additional exception information. All OpenJPA
  * exceptions implement this interface.
@@ -82,5 +85,9 @@ public interface ExceptionInfo {
      * The failed object.
      */
     Object getFailedObject();
+
+    void printStackTrace(PrintStream out);
+
+    void printStackTrace(PrintWriter out);
 }
 

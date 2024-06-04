@@ -27,9 +27,9 @@ import org.apache.openjpa.persistence.OpenJPAPersistenceUtil;
 
 /**
  * OpenJPA optimized TraversableResolver Default implementation/behavior asks all discovered providers -
- * javax.persistence.Persistence.getPersistenceUtil().isLoaded( traversableObject, traversableProperty.getName());
+ * jakarta.persistence.Persistence.getPersistenceUtil().isLoaded( traversableObject, traversableProperty.getName());
  *
- * @see javax.validation.TraversableResolver
+ * @see jakarta.validation.TraversableResolver
  */
 public class TraversableResolverImpl implements TraversableResolver {
 
@@ -39,8 +39,8 @@ public class TraversableResolverImpl implements TraversableResolver {
     /* (non-Javadoc) isReachable() is called by the Validator before accessing
      * a property for validation or for cascading.
      *
-     * @see javax.validation.TraversableResolver#isReachable(java.lang.Object,
-     *      javax.validation.Path.Node, java.lang.Class, javax.validation.Path,
+     * @see jakarta.validation.TraversableResolver#isReachable(java.lang.Object,
+     *      jakarta.validation.Path.Node, java.lang.Class, javax.validation.Path,
      *      java.lang.annotation.ElementType)
      */
     @Override
@@ -64,8 +64,8 @@ public class TraversableResolverImpl implements TraversableResolver {
      * isReachable() returns true and before a property marked with @Valid
      * is cascaded.
      *
-     * @see javax.validation.TraversableResolver#isCascadable(java.lang.Object,
-     *      javax.validation.Path.Node, java.lang.Class, javax.validation.Path,
+     * @see jakarta.validation.TraversableResolver#isCascadable(java.lang.Object,
+     *      jakarta.validation.Path.Node, java.lang.Class, javax.validation.Path,
      *      java.lang.annotation.ElementType)
      */
     @Override
