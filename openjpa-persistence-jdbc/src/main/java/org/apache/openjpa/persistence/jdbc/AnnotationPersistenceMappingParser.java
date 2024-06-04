@@ -545,7 +545,7 @@ public class AnnotationPersistenceMappingParser
                 sup = (FieldMapping) cm.addDefinedSuperclassField(attr.name(),
                     Object.class, Object.class);
             if (attr.column() != null)
-                parseColumns(sup, attr.column());
+                parseColumns(sup, new javax.persistence.Column[]{attr.column()});
         }
     }
 
@@ -1188,7 +1188,7 @@ public class AnnotationPersistenceMappingParser
                         value());
                     break;
                 case COL:
-                    parseColumns(fm, (javax.persistence.Column) anno);
+                    parseColumns(fm, (javax.persistence.Column[]) new Annotation[]{(javax.persistence.Column) anno});
                     break;
                 case COLS:
                     parseColumns(fm, ((Columns) anno).value());
@@ -1450,7 +1450,7 @@ public class AnnotationPersistenceMappingParser
             String attrName = attr.name();
             FieldMapping efm = getEmbeddedFieldMapping(fm, attrName);
             if (attr.column() != null)
-                parseColumns(efm, attr.column());
+                parseColumns(efm, new javax.persistence.Column[]{attr.column()});
         }
     }
 
@@ -1669,7 +1669,7 @@ public class AnnotationPersistenceMappingParser
      * Parse @Column(s).
      */
     protected void parseColumns(FieldMapping fm,
-        javax.persistence.Column... pcols) {
+                                javax.persistence.Column[] pcols) {
         if (pcols.length == 0)
             return;
 
@@ -2095,7 +2095,7 @@ public class AnnotationPersistenceMappingParser
     }
 
     /**
-     * Parse @javax.persistence.OrderColumn
+     * Parse @jakarta.persistence.OrderColumn
      */
     private void parseJavaxOrderColumn(FieldMapping fm,
         javax.persistence.OrderColumn order) {

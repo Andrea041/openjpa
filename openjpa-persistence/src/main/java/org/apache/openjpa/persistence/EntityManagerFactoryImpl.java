@@ -254,8 +254,8 @@ public class EntityManagerFactoryImpl
             }
         }
 
-        // javax.persistence.jtaDataSource and openjpa.ConnectionFactory name are equivalent.
-        // prefer javax.persistence for now.
+        // jakarta.persistence.jtaDataSource and openjpa.ConnectionFactory name are equivalent.
+        // prefer jakarta.persistence for now.
         String cfName = (String) Configurations.removeProperty("jtaDataSource", props);
         if(cfName == null) {
             cfName = (String) Configurations.removeProperty("ConnectionFactoryName", props);
