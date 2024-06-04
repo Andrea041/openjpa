@@ -42,7 +42,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        #run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Andrea041_openjpa -P JaCoCo
+        # I'm working whit java 8 and sonar plugin not work with this java version, so I've commented the following run cmd
+        # run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Andrea041_openjpa -P JaCoCo
         run: mvn clean verify -P JaCoCo
       - name: Save JaCoCo report
         uses: actions/upload-artifact@v3

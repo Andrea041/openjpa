@@ -2297,8 +2297,12 @@
                             <goal>testCompile</goal>
                         </goals>
                         <configuration>
+                            <!-- isw2
                             <source>${compile.testclass.source}</source>
                             <target>${compile.testclass.target}</target>
+                            -->
+                            <source>1.8</source>
+                            <target>1.8</target>
                         </configuration>
                     </execution>
                 </executions>
