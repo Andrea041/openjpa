@@ -1,5 +1,9 @@
-package org.apache.openjpa.util;
+package org.apache.openjpa.util.proxyManagerImplTest;
 
+import org.apache.openjpa.util.testUtil.Istance;
+import org.apache.openjpa.util.testUtil.NonProxyableIstance;
+import org.apache.openjpa.util.Proxy;
+import org.apache.openjpa.util.ProxyManagerImpl;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

@@ -1,4 +1,4 @@
-package org.apache.openjpa.util;
+package org.apache.openjpa.util.testUtil;
 /* This class is used to simulate a non-proxyable object -> "final" modifier */
 
 public final class NonProxyableIstance {

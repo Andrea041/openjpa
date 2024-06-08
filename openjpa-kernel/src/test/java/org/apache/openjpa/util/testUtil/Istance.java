@@ -1,4 +1,4 @@
-package org.apache.openjpa.util;
+package org.apache.openjpa.util.testUtil;
 
 public class Istance {
     private String dummy;
