@@ -1,6 +1,5 @@
-package org.apache.openjpa.util.cacheMapTest;
+package org.apache.openjpa.util;
 
-import org.apache.openjpa.util.CacheMap;
 import org.apache.openjpa.util.testUtil.InvalidKeyValue;
 import org.junit.After;
 import org.junit.Assert;
