@@ -2,7 +2,7 @@ name: ISW2 Testing OpenJPA Ba-Dua
 on:
   push:
     branches:
-      - isw2
+      - CoverageErrorBaDua
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
