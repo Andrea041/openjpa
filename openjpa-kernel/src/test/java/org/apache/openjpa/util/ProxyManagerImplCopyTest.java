@@ -71,7 +71,8 @@ public class ProxyManagerImplCopyTest {
                 break;
             case PROXYABLE:
                 assert output != null;
-                Assert.assertEquals(((ProxyableInstance) output).getDummy(), ((ProxyableInstance) obj).getDummy()); // check that the state of the proxied object (output) is the same of the original obj
+                /* check that the state of the proxied object (output) is the same of the original obj */
+                Assert.assertEquals(((ProxyableInstance) output).getDummy(), ((ProxyableInstance) obj).getDummy());
                 break;
         }
     }
