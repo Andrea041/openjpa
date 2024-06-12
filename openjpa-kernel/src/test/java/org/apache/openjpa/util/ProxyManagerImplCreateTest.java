@@ -101,7 +101,6 @@ public class ProxyManagerImplCreateTest {
             case MAP:
                 Map<String, Integer> map = new HashMap<>();
                 map.put("A", 1);
-                map.put("B", 2);
                 return map;
             case DATE:
                 Date date = new Date();
@@ -141,15 +140,15 @@ public class ProxyManagerImplCreateTest {
             Assert.assertNull(output);
 
         /* Killed all remaining mutations */
-        /*if (objectInstance.equals(ObjectType.MAP)) {
-            Assert.assertFalse(((Map<?, ?>) output).isEmpty());
+        if (objectInstance.equals(ObjectType.MAP)) {
+            Assert.assertEquals(((Map<?, ?>) output).get("A"), ((Map<?, ?>) obj).get("A"));
         } else if (objectInstance.equals(ObjectType.DATE)) {
             Assert.assertEquals(((Date) output).getTime(), ((Date) obj).getTime());
         } else if (objectInstance.equals(ObjectType.TIMESTAMP)) {
             Assert.assertEquals(((Timestamp) output).getNanos(), ((Timestamp) obj).getNanos());
         } else if (objectInstance.equals(ObjectType.CALENDAR)) {
             Assert.assertEquals(((Calendar) output).getTimeInMillis(), ((Calendar) obj).getTimeInMillis());
-        }*/
+        }
     }
 
     @After
