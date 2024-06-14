@@ -21,7 +21,6 @@ public class CacheMapPutTest {
     private final boolean existingKey;
     private CacheMap cacheMap;
     private final Object output;
-    private Integer dummyValueOld = 5;
     private Integer dummyValueNew = 6;
     public String keyType;
     public String valueType;
@@ -56,7 +55,7 @@ public class CacheMapPutTest {
                 {VALID, NULL, false, false, false, null},
                 {VALID, INVALID, true, false, false, new InvalidKeyValue()}, // return invalid object
                 {VALID, INVALID, false, false, false, null},
-                {INVALID, VALID, true, false, false, 5}, // invalid key
+                {INVALID, VALID, true, false, false, null}, // invalid key
                 {INVALID, VALID, false, false, false, null},
                 {INVALID, NULL, true, false, false, null},
                 {INVALID, NULL, false, false, false, null},
@@ -90,6 +89,7 @@ public class CacheMapPutTest {
 
     @Test
     public void test() {
+        /* Pass another value to simulate put method */
         Object newValue = null;
         if (!Objects.equals(valueType, NULL))
             if (Objects.equals(valueType, VALID))
@@ -102,24 +102,22 @@ public class CacheMapPutTest {
             cacheMap.cacheMap.clear();
         }
 
-        Object res = cacheMap.put(key, newValue);  // res is the output that we want to check
-        Object checkGet = cacheMap.get(key);
+        /* res must contain the old value that match with the given key */
+        Object res = cacheMap.put(key, newValue);
 
-        if (!existingKey && !pinnedMap)
-            System.out.println(res);
+        Object checkGet = cacheMap.get(key);
 
         /* check put return (test goal) */
         if (output != null) {
             Assert.assertEquals(output, res);
         } else {
             /* check when the output is null:
-             * 1) key is invalid
-             * 2) no existing key */
+             * - no existing key */
             Assert.assertNull(res);
         }
 
         /* check get return */
-        if (!valueType.equals(NULL) && !maxSize)
+        if (!valueType.equals(NULL) && !maxSize && !keyType.equals(INVALID))
             Assert.assertNotNull(checkGet);
         else
             Assert.assertNull(checkGet);
@@ -133,10 +131,10 @@ public class CacheMapPutTest {
                 verify(cacheMap).entryAdded(key, newValue);
             }
             verify(cacheMap).writeUnlock();
-        } else if (!maxSize && existingKey && valueType.equals(VALID)) {  // mutations on line 417-418
+        } else if (!maxSize && existingKey && valueType.equals(VALID) && keyType.equals(VALID)) {  // mutations on line 417-418
             verify(cacheMap).entryRemoved(key, value, false);
             verify(cacheMap).entryAdded(key, newValue);
-            verify(cacheMap, times(2)).writeUnlock();
+            verify(cacheMap, times(2)).writeUnlock();   // mutation on line 422
         } else if (existingKey && valueType.equals(NULL)) { // mutation on line 411
             verify(cacheMap, times(2)).entryAdded(key, newValue);
         }
@@ -156,7 +154,7 @@ public class CacheMapPutTest {
                 key = new Object();
                 break;
             case INVALID:
-                key = this.output;
+                key = new InvalidKeyValue();
                 break;
         }
     }
@@ -167,8 +165,6 @@ public class CacheMapPutTest {
                 value = null;
                 break;
             case VALID:
-                value = dummyValueOld;
-                break;
             case INVALID:
                 value = this.output;
                 break;
