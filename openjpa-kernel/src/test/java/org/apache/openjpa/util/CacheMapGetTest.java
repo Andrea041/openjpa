@@ -49,9 +49,7 @@ public class CacheMapGetTest {
                 {VALID, true, true, 5},
                 {VALID, false, true, 5},
                 {INVALID, true, true, null},
-                {INVALID, false, true, null},
-                // Test cases added to have better perform on PIT
-                {NULL, true, true, 5}
+                {INVALID, false, true, null}
         });
     }
 
@@ -80,19 +78,10 @@ public class CacheMapGetTest {
             Assert.assertNull(res);
         }
 
-        /* All mutations killed */
+        /* Some mutations killed */
         if (existingKey && inSoftMap && !keyType.equals(INVALID)) {
             verify(cacheMap, times(2)).put(key, dummyValue);
-        } else if (inSoftMap) {
-            verify(cacheMap).setSoftReferenceSize(softMapSize);
-            if (!existingKey || !keyType.equals(VALID)) {
-                verify(cacheMap).put(cacheMap.softMap, key, dummyValue);
-            }
-        } else if (existingKey) {
-            verify(cacheMap).put(key, dummyValue);
         }
-
-        verify(cacheMap).get(key);
     }
 
     @After

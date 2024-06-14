@@ -64,7 +64,7 @@ public class ProxyManagerImplCreateTest {
 
     @Before
     public void setUp() {
-        proxyManager = spy(new ProxyManagerImpl());
+        proxyManager = new ProxyManagerImpl();
 
         if (objectInstance.equals(ObjectType.HIDE_NON_PROXYABLE))
             proxyManager.setUnproxyable(NonProxyableInstanceNotFinal.class.getName());   // set this type of class as not proxyable
